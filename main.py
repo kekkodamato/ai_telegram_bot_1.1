@@ -39,8 +39,7 @@ def ricevi_testo(update: Update, context: CallbackContext):
     else:
         if crediti.get(chat_id, 0) > 0:
             crediti[chat_id] -= 1
-            context.bot.send_message(chat_id=admin_id, text=f"📨 Richiesta:
-{text}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✏️ Rispondi", callback_data=f"rispondi_{chat_id}")]]))
+            context.bot.send_message(chat_id=admin_id, text=f"📨 Richiesta:{text}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✏️ Rispondi", callback_data=f"rispondi_{chat_id}")]]))
         else:
             richieste[chat_id] = text
             btns = [
